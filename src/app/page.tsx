@@ -1,5 +1,7 @@
+import About from '@/components/About';
 import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar';
+import Projects from '@/components/Projects';
 import SmoothScrollCanvas from '@/components/SmoothScrollCanvas';
 import TechTicker from '@/components/TechTicker';
 
@@ -9,6 +11,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <TechTicker />
+      <About />
+      <Projects />
       <SmoothScrollCanvas />
     </main>
   );

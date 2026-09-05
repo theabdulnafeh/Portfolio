@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
 html,
 body {
   margin: 0;
@@ -14,20 +19,21 @@ h1, h2, h3, h4, h5, h6, nav, button, a, input, textarea {
   font-family: var(--font-montserrat), sans-serif;
 }
 
-/* Infinite Marquee Keyframe Animation */
+/* Infinite Marquee Keyframe Animation - GPU accelerated & mathematically seamless */
 @keyframes marquee {
   0% {
-    transform: translateX(0%);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(-33.3333%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
 .animate-marquee {
   display: flex;
   width: max-content;
-  animation: marquee 25s linear infinite;
+  will-change: transform;
+  animation: marquee 30s linear infinite;
 }
 
 .group:hover .animate-marquee {

@@ -4,7 +4,10 @@ import Link from 'next/link';
 
 export default function Hero() {
   return (
-    <div className="absolute top-[15vh] sm:top-[18vh] left-6 sm:left-12 lg:left-16 max-w-2xl lg:max-w-3xl z-20 font-[family-name:var(--font-montserrat)]">
+    <div
+      id="home"
+      className="absolute top-[15vh] sm:top-[18vh] left-6 sm:left-12 lg:left-16 max-w-2xl lg:max-w-3xl z-20 font-[family-name:var(--font-montserrat)] scroll-mt-28"
+    >
       <div className="flex flex-col gap-6 sm:gap-7">
         
         {/* Top Header: HELLO I'M */}
