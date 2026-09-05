@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 const TOTAL_FRAMES = 192;
-const SCROLL_HEIGHT_VH = 500; // Total height of the scroll container in vh
+const SCROLL_HEIGHT_VH = 580; // Total height of the scroll container in vh
 
 export default function SmoothScrollCanvas() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);

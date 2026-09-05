@@ -3,6 +3,22 @@
 import Link from 'next/link';
 
 export default function Hero() {
+  const handleHireMeClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const contactElement = document.getElementById('contact');
+    if (contactElement) {
+      contactElement.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.hash = '#contact';
+    }
+    setTimeout(() => {
+      const nameInput = document.getElementById('contact-fullname');
+      if (nameInput) {
+        nameInput.focus();
+      }
+    }, 600);
+  };
+
   return (
     <div
       id="home"
@@ -27,7 +43,7 @@ export default function Hero() {
             <span className="text-5xl sm:text-7xl lg:text-8xl xl:text-[5.5rem] font-extrabold tracking-tight drop-shadow-2xl">
               NAFEH
             </span>
-            <span className="font-syne font-extrabold text-xs sm:text-sm lg:text-base tracking-widest text-zinc-300 self-end pb-2 sm:pb-3 drop-shadow-md">
+            <span className="font-syne font-extrabold text-xs sm:text-sm lg:text-base tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-amber-200">
               MERN DEVELOPER
             </span>
           </div>
@@ -43,16 +59,17 @@ export default function Hero() {
         {/* Action Buttons Group */}
         <div className="flex flex-wrap items-center gap-4 pt-1">
           {/* Gradient Amber-Brown Pill Button */}
-          <Link
+          <a
             href="#contact"
-            className="px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-bold text-white bg-gradient-to-b from-[#241105] via-[#481e05] to-[#783005] hover:from-[#331808] hover:via-[#592607] hover:to-[#913c07] border border-[#a6480d]/50 hover:border-[#ec7322] shadow-[0_4px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_4px_20px_rgba(236,115,34,0.4)] transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 tracking-wide text-center drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
+            onClick={handleHireMeClick}
+            className="px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-bold text-white bg-gradient-to-b from-[#241105] via-[#481e05] to-[#783005] hover:from-[#331808] hover:via-[#592607] hover:to-[#913c07] border border-[#a6480d]/50 hover:border-[#ec7322] shadow-[0_4px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_4px_20px_rgba(236,115,34,0.4)] transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 tracking-wide text-center drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)] cursor-pointer"
           >
             Hire Me Now
-          </Link>
+          </a>
 
           {/* Transparent Bordered WhatsApp Button */}
           <a
-            href="https://wa.me/"
+            href="https://wa.me/923155462930"
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-syne font-bold text-white bg-black/40 hover:bg-black/60 border-2 border-white/60 backdrop-blur-md shadow-md transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2.5 tracking-wide"
@@ -71,37 +88,55 @@ export default function Hero() {
 
         {/* Social Icon Links */}
         <div className="flex items-center gap-3 pt-1">
-          {/* Facebook / Github */}
+          {/* Facebook */}
           <a
-            href="https://github.com"
+            href="https://facebook.com/abduln251"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border-2 border-white/60 bg-black/40 backdrop-blur-md flex items-center justify-center hover:bg-white transition-all duration-200 shadow-md group"
+          >
+            <img
+              width="50"
+              height="50"
+              src="https://img.icons8.com/ios-filled/50/FFFFFF/facebook-new.png"
+              alt="facebook-new"
+              className="w-5 h-5 sm:w-5 sm:h-5 object-contain group-hover:invert transition-all"
+            />
+          </a>
+
+          {/* GitHub */}
+          <a
+            href="https://github.com/theabdulnafeh"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border-2 border-white/60 bg-black/40 backdrop-blur-md flex items-center justify-center text-white font-syne font-bold text-sm sm:text-base hover:bg-white hover:text-black transition-all duration-200 shadow-md"
+            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border-2 border-white/60 bg-black/40 backdrop-blur-md flex items-center justify-center hover:bg-white transition-all duration-200 shadow-md group"
           >
-            f
-          </a>
-
-          {/* X / Twitter */}
-          <a
-            href="https://x.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="X / Twitter"
-            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border-2 border-white/60 bg-black/40 backdrop-blur-md flex items-center justify-center text-white font-syne font-bold text-sm sm:text-base hover:bg-white hover:text-black transition-all duration-200 shadow-md"
-          >
-            X
+            <img
+              width="48"
+              height="48"
+              src="https://img.icons8.com/fluency-systems-filled/48/FFFFFF/github.png"
+              alt="github"
+              className="w-5 h-5 sm:w-5 sm:h-5 object-contain group-hover:invert transition-all"
+            />
           </a>
 
           {/* Instagram */}
           <a
-            href="https://instagram.com"
+            href="http://instagram.com/theabdulnafeh"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border-2 border-white/60 bg-black/40 backdrop-blur-md flex items-center justify-center text-white font-syne font-bold text-xs sm:text-sm hover:bg-white hover:text-black transition-all duration-200 shadow-md"
+            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border-2 border-white/60 bg-black/40 backdrop-blur-md flex items-center justify-center hover:bg-white transition-all duration-200 shadow-md group"
           >
-            ig
+            <img
+              width="48"
+              height="48"
+              src="https://img.icons8.com/fluency-systems-regular/48/FFFFFF/instagram-new--v1.png"
+              alt="instagram-new--v1"
+              className="w-5 h-5 sm:w-5 sm:h-5 object-contain group-hover:invert transition-all"
+            />
           </a>
 
           {/* LinkedIn */}
@@ -110,9 +145,15 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border-2 border-white/60 bg-black/40 backdrop-blur-md flex items-center justify-center text-white font-syne font-bold text-xs sm:text-sm hover:bg-white hover:text-black transition-all duration-200 shadow-md"
+            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border-2 border-white/60 bg-black/40 backdrop-blur-md flex items-center justify-center hover:bg-white transition-all duration-200 shadow-md group"
           >
-            in
+            <img
+              width="50"
+              height="50"
+              src="https://img.icons8.com/ios-filled/50/FFFFFF/linkedin.png"
+              alt="linkedin"
+              className="w-5 h-5 sm:w-5 sm:h-5 object-contain group-hover:invert transition-all"
+            />
           </a>
         </div>
 

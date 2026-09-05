@@ -6,7 +6,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="absolute top-[170vh] sm:top-[180vh] left-1/2 -translate-x-1/2 w-[90%] max-w-6xl z-20 flex flex-col items-center justify-center font-[family-name:var(--font-montserrat)] text-white scroll-mt-28"
+      className="absolute top-[100vh] sm:top-[105vh] left-1/2 -translate-x-1/2 w-[90%] max-w-6xl z-20 flex flex-col items-center justify-center font-[family-name:var(--font-montserrat)] text-white scroll-mt-28"
     >
       {/* Clean Transparent Section (No Glass Container Box) */}
       <div className="w-full relative">
