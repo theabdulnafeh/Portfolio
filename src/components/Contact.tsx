@@ -31,6 +31,7 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
@@ -52,20 +53,39 @@ export default function Contact() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateForm()) return;
 
     setIsSubmitting(true);
-    // Simulate high-converting API submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send inquiry. Please try again.');
+      }
+
       setIsSubmitted(true);
-    }, 1200);
+    } catch (err: any) {
+      console.error('Contact submission error:', err);
+      setSubmitError(err.message || 'Something went wrong while sending your inquiry.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText('abduln251@hotmail.om');
+    navigator.clipboard.writeText('abduln251@hotmail.com');
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
   };
@@ -80,6 +100,7 @@ export default function Contact() {
       projectBrief: '',
     });
     setErrors({});
+    setSubmitError(null);
     setIsSubmitted(false);
   };
 
@@ -148,8 +169,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-zinc-400 uppercase tracking-wider">Email Address</h4>
-                    <a href="mailto:abduln251@hotmail.om" className="text-sm font-semibold text-white hover:text-amber-400 transition-colors">
-                      abduln251@hotmail.om
+                    <a href="mailto:abduln251@hotmail.com" className="text-sm font-semibold text-white hover:text-amber-400 transition-colors">
+                      abduln251@hotmail.com
                     </a>
                   </div>
                 </div>
@@ -342,6 +363,12 @@ export default function Contact() {
                     <span className="text-xs text-red-400 font-medium">{errors.projectBrief}</span>
                   )}
                 </div>
+
+                {submitError && (
+                  <div className="p-3.5 rounded-xl bg-red-500/20 border border-red-500/50 text-xs text-red-300 font-medium">
+                    {submitError}
+                  </div>
+                )}
 
                 {/* Submit Button */}
                 <button
