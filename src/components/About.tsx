@@ -6,7 +6,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="absolute top-[100vh] sm:top-[105vh] left-1/2 -translate-x-1/2 w-[90%] max-w-6xl z-20 flex flex-col items-center justify-center font-[family-name:var(--font-montserrat)] text-white scroll-mt-28"
+      className="absolute top-[72vh] sm:top-[105vh] left-1/2 -translate-x-1/2 w-[92%] sm:w-[90%] max-w-6xl z-20 flex flex-col items-center justify-center font-[family-name:var(--font-montserrat)] text-white scroll-mt-28"
     >
       {/* Clean Transparent Section (No Glass Container Box) */}
       <div className="w-full relative">
@@ -102,56 +102,56 @@ export default function About() {
           </div>
 
           {/* Right Column: Key Metrics & Stat Cards Grid (5 cols) */}
-          <div className="lg:col-span-5 grid grid-cols-2 gap-4">
+          <div className="lg:col-span-5 grid grid-cols-2 gap-3 sm:gap-4">
             
             {/* Stat Card 1 */}
-            <div className="p-6 rounded-2xl bg-black/40 border border-white/10 hover:border-amber-500/50 transition-all duration-300 flex flex-col items-center text-center group/card backdrop-blur-sm hover:bg-black/60 transform hover:-translate-y-1 shadow-lg">
-              <span className="text-3xl sm:text-4xl font-extrabold font-syne text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 mb-1">
+            <div className="p-4 sm:p-6 rounded-2xl bg-black/40 border border-white/10 hover:border-amber-500/50 transition-all duration-300 flex flex-col items-center text-center group/card backdrop-blur-sm hover:bg-black/60 transform hover:-translate-y-1 shadow-lg">
+              <span className="text-2xl sm:text-4xl font-extrabold font-syne text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 mb-1">
                 3+
               </span>
               <span className="text-xs sm:text-sm font-semibold text-zinc-200">
                 Years Experience
               </span>
-              <span className="text-[11px] text-zinc-400 mt-1">
+              <span className="text-[10px] sm:text-[11px] text-zinc-400 mt-1">
                 Full-Stack Development
               </span>
             </div>
 
             {/* Stat Card 2 */}
-            <div className="p-6 rounded-2xl bg-black/40 border border-white/10 hover:border-amber-500/50 transition-all duration-300 flex flex-col items-center text-center group/card backdrop-blur-sm hover:bg-black/60 transform hover:-translate-y-1 shadow-lg">
-              <span className="text-3xl sm:text-4xl font-extrabold font-syne text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 mb-1">
+            <div className="p-4 sm:p-6 rounded-2xl bg-black/40 border border-white/10 hover:border-amber-500/50 transition-all duration-300 flex flex-col items-center text-center group/card backdrop-blur-sm hover:bg-black/60 transform hover:-translate-y-1 shadow-lg">
+              <span className="text-2xl sm:text-4xl font-extrabold font-syne text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 mb-1">
                 25+
               </span>
               <span className="text-xs sm:text-sm font-semibold text-zinc-200">
                 Projects Completed
               </span>
-              <span className="text-[11px] text-zinc-400 mt-1">
+              <span className="text-[10px] sm:text-[11px] text-zinc-400 mt-1">
                 Websites & Apps
               </span>
             </div>
 
             {/* Stat Card 3 */}
-            <div className="p-6 rounded-2xl bg-black/40 border border-white/10 hover:border-amber-500/50 transition-all duration-300 flex flex-col items-center text-center group/card backdrop-blur-sm hover:bg-black/60 transform hover:-translate-y-1 shadow-lg">
-              <span className="text-3xl sm:text-4xl font-extrabold font-syne text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 mb-1">
+            <div className="p-4 sm:p-6 rounded-2xl bg-black/40 border border-white/10 hover:border-amber-500/50 transition-all duration-300 flex flex-col items-center text-center group/card backdrop-blur-sm hover:bg-black/60 transform hover:-translate-y-1 shadow-lg">
+              <span className="text-2xl sm:text-4xl font-extrabold font-syne text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 mb-1">
                 100%
               </span>
               <span className="text-xs sm:text-sm font-semibold text-zinc-200">
                 Commitment
               </span>
-              <span className="text-[11px] text-zinc-400 mt-1">
+              <span className="text-[10px] sm:text-[11px] text-zinc-400 mt-1">
                 Quality & Deadlines
               </span>
             </div>
 
             {/* Stat Card 4 */}
-            <div className="p-6 rounded-2xl bg-black/40 border border-white/10 hover:border-amber-500/50 transition-all duration-300 flex flex-col items-center text-center group/card backdrop-blur-sm hover:bg-black/60 transform hover:-translate-y-1 shadow-lg">
-              <span className="text-3xl sm:text-4xl font-extrabold font-syne text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 mb-1">
+            <div className="p-4 sm:p-6 rounded-2xl bg-black/40 border border-white/10 hover:border-amber-500/50 transition-all duration-300 flex flex-col items-center text-center group/card backdrop-blur-sm hover:bg-black/60 transform hover:-translate-y-1 shadow-lg">
+              <span className="text-2xl sm:text-4xl font-extrabold font-syne text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 mb-1">
                 24/7
               </span>
               <span className="text-xs sm:text-sm font-semibold text-zinc-200">
                 Support
               </span>
-              <span className="text-[11px] text-zinc-400 mt-1">
+              <span className="text-[10px] sm:text-[11px] text-zinc-400 mt-1">
                 Always Available
               </span>
             </div>

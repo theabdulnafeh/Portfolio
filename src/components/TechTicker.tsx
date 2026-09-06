@@ -120,7 +120,7 @@ export default function TechTicker() {
   return (
     <div
       id="skills"
-      className="absolute top-[215vh] sm:top-[220vh] left-1/2 -translate-x-1/2 w-[90%] max-w-5xl z-20 flex flex-col items-center justify-center text-center font-[family-name:var(--font-montserrat)] scroll-mt-28"
+      className="absolute top-[218vh] sm:top-[220vh] left-1/2 -translate-x-1/2 w-[92%] sm:w-[90%] max-w-5xl z-20 flex flex-col items-center justify-center text-center font-[family-name:var(--font-montserrat)] scroll-mt-28"
     >
       {/* Section Header */}
       <div className="flex flex-col items-center text-center mb-10 sm:mb-14">

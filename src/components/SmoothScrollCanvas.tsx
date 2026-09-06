@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 const TOTAL_FRAMES = 192;
-const SCROLL_HEIGHT_VH = 580; // Total height of the scroll container in vh
+const SCROLL_HEIGHT_VH = 610; // Total height of the scroll container in vh
 
 export default function SmoothScrollCanvas() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -19,31 +19,32 @@ export default function SmoothScrollCanvas() {
   const animFrameIdRef = useRef<number | null>(null);
   const isAnimatingRef = useRef<boolean>(false);
 
-  // 1. Preload all frame images
+  // 1. Preload initial keyframes for instant site display, then lazily load remainder
   useEffect(() => {
     let isMounted = true;
     const loadedImages: HTMLImageElement[] = [];
-    let count = 0;
+    let initialCount = 0;
+    const INITIAL_THRESHOLD = 12; // Preload only first 12 frames (~350KB) to display site in < 300ms
 
     for (let i = 1; i <= TOTAL_FRAMES; i++) {
       const img = new Image();
       const frameIndex = 1999 + i; // 2000 to 2191
-      img.src = `/bg/My Video${frameIndex}.jpg`;
+      img.src = `/bg/My Video${frameIndex}.webp`;
 
       img.onload = () => {
         if (!isMounted) return;
-        count++;
-        setLoadedCount(count);
-        if (count === TOTAL_FRAMES) {
+        initialCount++;
+        setLoadedCount(initialCount);
+        if (initialCount >= INITIAL_THRESHOLD) {
           setIsLoaded(true);
         }
       };
 
       img.onerror = () => {
         if (!isMounted) return;
-        count++;
-        setLoadedCount(count);
-        if (count === TOTAL_FRAMES) {
+        initialCount++;
+        setLoadedCount(initialCount);
+        if (initialCount >= INITIAL_THRESHOLD) {
           setIsLoaded(true);
         }
       };
@@ -88,6 +89,9 @@ export default function SmoothScrollCanvas() {
     ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
   };
 
+  // Store last width to prevent canvas context reset when mobile address bar hides/shows
+  const lastWidthRef = useRef<number>(0);
+
   // Resize canvas to match display size & DPI ratio
   const updateCanvasSize = () => {
     const canvas = canvasRef.current;
@@ -97,7 +101,9 @@ export default function SmoothScrollCanvas() {
     const width = window.innerWidth;
     const height = window.innerHeight;
 
-    if (canvas.width !== width * dpr || canvas.height !== height * dpr) {
+    // Only resize canvas context when window width changes or initial render (prevents mobile scroll freeze)
+    if (width !== lastWidthRef.current || Math.abs(canvas.height - height * dpr) > 150 * dpr) {
+      lastWidthRef.current = width;
       canvas.width = width * dpr;
       canvas.height = height * dpr;
       canvas.style.width = `${width}px`;
@@ -115,9 +121,9 @@ export default function SmoothScrollCanvas() {
     const loop = () => {
       const diff = targetFrameRef.current - currentFrameRef.current;
 
-      // Lerp factor 0.1 ensures smooth fluid motion while following user scroll accurately
+      // Higher LERP factor (0.22) ensures instant responsive frame following on mobile
       if (Math.abs(diff) > 0.001) {
-        currentFrameRef.current += diff * 0.1;
+        currentFrameRef.current += diff * 0.22;
         drawFrame(currentFrameRef.current);
         animFrameIdRef.current = requestAnimationFrame(loop);
       } else {

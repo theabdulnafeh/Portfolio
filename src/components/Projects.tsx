@@ -63,7 +63,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="absolute top-[265vh] sm:top-[270vh] left-1/2 -translate-x-1/2 w-[90%] max-w-6xl z-20 flex flex-col items-center justify-center font-[family-name:var(--font-montserrat)] text-white scroll-mt-28 pb-16"
+      className="absolute top-[258vh] sm:top-[270vh] left-1/2 -translate-x-1/2 w-[92%] sm:w-[90%] max-w-6xl z-20 flex flex-col items-center justify-center font-[family-name:var(--font-montserrat)] text-white scroll-mt-28 pb-16"
     >
       {/* Clean Transparent Container */}
       <div className="w-full relative">

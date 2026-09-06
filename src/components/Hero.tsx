@@ -22,28 +22,28 @@ export default function Hero() {
   return (
     <div
       id="home"
-      className="absolute top-[15vh] sm:top-[18vh] left-6 sm:left-12 lg:left-16 max-w-2xl lg:max-w-3xl z-20 font-[family-name:var(--font-montserrat)] scroll-mt-28"
+      className="absolute top-[12vh] sm:top-[18vh] left-5 sm:left-12 lg:left-16 right-5 sm:right-auto max-w-2xl lg:max-w-3xl z-20 font-[family-name:var(--font-montserrat)] scroll-mt-28"
     >
-      <div className="flex flex-col gap-6 sm:gap-7">
+      <div className="flex flex-col gap-4 sm:gap-7">
         
         {/* Top Header: HELLO I'M */}
-        <div className="pt-2 sm:pt-3">
-          <span className="font-syne font-extrabold text-sm sm:text-base tracking-widest text-white uppercase drop-shadow-md">
+        <div className="pt-1 sm:pt-3">
+          <span className="font-syne font-extrabold text-xs sm:text-base tracking-widest text-white uppercase drop-shadow-md">
             HELLO I'M
           </span>
         </div>
 
         {/* Main Headline: Name + Role */}
         <div className="flex flex-col text-white font-syne uppercase tracking-tight leading-[0.88]">
-          <h1 className="text-5xl sm:text-7xl lg:text-8xl xl:text-[5.5rem] font-extrabold tracking-tight drop-shadow-2xl">
+          <h1 className="text-4xl sm:text-7xl lg:text-8xl xl:text-[5.5rem] font-extrabold tracking-tight drop-shadow-2xl">
             ABDUL
           </h1>
           
-          <div className="flex flex-wrap items-baseline gap-x-4 sm:gap-x-6 mt-1 sm:mt-2">
-            <span className="text-5xl sm:text-7xl lg:text-8xl xl:text-[5.5rem] font-extrabold tracking-tight drop-shadow-2xl">
+          <div className="flex flex-wrap items-baseline gap-x-3 sm:gap-x-6 mt-1 sm:mt-2">
+            <span className="text-4xl sm:text-7xl lg:text-8xl xl:text-[5.5rem] font-extrabold tracking-tight drop-shadow-2xl">
               NAFEH
             </span>
-            <span className="font-syne font-extrabold text-xs sm:text-sm lg:text-base tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-amber-200">
+            <span className="font-syne font-extrabold text-[11px] sm:text-sm lg:text-base tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-amber-200">
               MERN DEVELOPER
             </span>
           </div>
@@ -57,7 +57,7 @@ export default function Hero() {
         </div>
 
         {/* Action Buttons Group */}
-        <div className="flex flex-wrap items-center gap-4 pt-1">
+        <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-1">
           {/* Gradient Amber-Brown Pill Button */}
           <a
             href="#contact"
