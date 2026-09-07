@@ -132,8 +132,8 @@ export default function Footer() {
             <div className="flex flex-col gap-2 text-xs sm:text-sm text-zinc-300">
               <p className="flex items-center gap-2">
                 <span className="text-amber-400 font-bold">✉</span>
-                <a href="mailto:abdulnafeh251@gmail.com" className="hover:text-white transition-colors">
-                  abdulnafeh251@gmail.com
+                <a href="mailto:abduln251@hotmail.com" className="hover:text-white transition-colors">
+                  abduln251@hotmail.com
                 </a>
               </p>
               <p className="flex items-center gap-2">
