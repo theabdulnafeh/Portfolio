@@ -118,17 +118,12 @@ export default function TechTicker() {
   const tickerItems = [...TECH_ITEMS, ...TECH_ITEMS, ...TECH_ITEMS, ...TECH_ITEMS];
 
   return (
-    <div
+    <section
       id="skills"
-      className="absolute top-[218vh] sm:top-[220vh] left-1/2 -translate-x-1/2 w-[92%] sm:w-[90%] max-w-5xl z-20 flex flex-col items-center justify-center text-center font-[family-name:var(--font-montserrat)] scroll-mt-28"
+      className="relative z-20 py-16 sm:py-24 px-5 sm:px-12 lg:px-16 w-full max-w-5xl mx-auto flex flex-col items-center justify-center text-center font-[family-name:var(--font-montserrat)] scroll-mt-28"
     >
       {/* Section Header */}
       <div className="flex flex-col items-center text-center mb-10 sm:mb-14">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/40 border border-white/10 text-xs sm:text-sm font-semibold tracking-wider text-amber-400 uppercase mb-4 backdrop-blur-sm">
-          <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
-          <span>My Tech Stack</span>
-        </div>
-
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-syne uppercase tracking-tight text-white drop-shadow-lg">
           Technologies & <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-amber-200">Frameworks</span>
         </h2>
@@ -159,7 +154,7 @@ export default function TechTicker() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

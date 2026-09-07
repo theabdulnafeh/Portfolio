@@ -5,7 +5,7 @@ import { useState } from 'react';
 interface Project {
   id: string;
   title: string;
-  category: 'Full-Stack' | 'Frontend' | 'Next.js';
+  category: 'Full-Stack' | 'Frontend' | 'Next.js' | 'MERN';
   description: string;
   tags: string[];
   liveUrl: string;
@@ -14,44 +14,17 @@ interface Project {
 
 const PROJECTS: Project[] = [
   {
-    id: 'ai-saas',
-    title: 'AI Content & Analytics SaaS',
-    category: 'Next.js',
-    description: 'Full-stack AI SaaS platform enabling users to generate, analyze, and manage content with AI workflows and Stripe subscriptions.',
-    tags: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'OpenAI', 'Stripe'],
-    liveUrl: 'https://github.com',
-    githubUrl: 'https://github.com',
-  },
-  {
-    id: 'ecommerce',
-    title: 'E-Commerce Platform',
+    id: 'ai-smart-study-assistant',
+    title: 'AI Smart Study Assistant',
     category: 'Full-Stack',
-    description: 'Scalable MERN stack online store with real-time inventory tracking, admin dashboard, Redux Toolkit, and secure payment processing.',
-    tags: ['React', 'Node.js', 'Express', 'MongoDB', 'Redux'],
-    liveUrl: 'https://github.com',
-    githubUrl: 'https://github.com',
-  },
-  {
-    id: 'task-hub',
-    title: 'Real-time Collaboration Hub',
-    category: 'Full-Stack',
-    description: 'Team task management web application with live WebSockets updates, drag-and-drop Kanban boards, and JWT authentication.',
-    tags: ['MongoDB', 'Express', 'React', 'Node.js', 'Socket.io'],
-    liveUrl: 'https://github.com',
-    githubUrl: 'https://github.com',
-  },
-  {
-    id: 'portfolio-3d',
-    title: 'Interactive 3D Portfolio Canvas',
-    category: 'Frontend',
-    description: 'High-performance interactive web portfolio with smooth frame sequence animation, LERP scroll physics, and Tailwind CSS.',
-    tags: ['Next.js', 'React', 'Canvas API', 'Tailwind CSS', 'Framer Motion'],
-    liveUrl: 'https://github.com',
-    githubUrl: 'https://github.com',
+    description: 'An AI-powered MERN stack study assistant web application leveraging Generative AI to help students master difficult topics. Users can submit notes, topics, or questions to receive instant summaries, simplified explanations, and quizzes through an interactive chatbot interface.',
+    tags: ['MongoDB', 'Express.js', 'React', 'Node.js', 'Generative AI'],
+    liveUrl: 'https://github.com/theabdulnafeh/AISmartStudyAssistant',
+    githubUrl: 'https://github.com/theabdulnafeh/AISmartStudyAssistant',
   },
 ];
 
-const CATEGORIES = ['All', 'Full-Stack', 'Next.js', 'Frontend'] as const;
+const CATEGORIES = ['All', 'Full-Stack'] as const;
 
 export default function Projects() {
   const [activeTab, setActiveTab] = useState<string>('All');
@@ -63,18 +36,13 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="absolute top-[258vh] sm:top-[270vh] left-1/2 -translate-x-1/2 w-[92%] sm:w-[90%] max-w-6xl z-20 flex flex-col items-center justify-center font-[family-name:var(--font-montserrat)] text-white scroll-mt-28 pb-16"
+      className="relative z-20 py-16 sm:py-24 px-5 sm:px-12 lg:px-16 w-full max-w-6xl mx-auto flex flex-col items-center justify-center font-[family-name:var(--font-montserrat)] text-white scroll-mt-28"
     >
       {/* Clean Transparent Container */}
       <div className="w-full relative">
         
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs sm:text-sm font-semibold tracking-wider text-amber-400 uppercase mb-4">
-            <span className="w-2 h-2 rounded-full bg-amber-400" />
-            <span>My Work Showcase</span>
-          </div>
-
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-syne uppercase tracking-tight text-white drop-shadow-lg">
             Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-amber-200">Projects</span>
           </h2>
@@ -87,10 +55,10 @@ export default function Projects() {
             <button
               key={cat}
               onClick={() => setActiveTab(cat)}
-              className={`px-4 sm:px-5 py-2 rounded-xl text-xs sm:text-sm font-bold tracking-wide transition-all duration-200 ${
+              className={`px-4 sm:px-5 py-2 rounded-xl text-xs sm:text-sm font-bold tracking-wide transition-colors duration-200 outline-none focus:outline-none focus:ring-0 focus-visible:outline-none active:outline-none [-webkit-tap-highlight-color:transparent] border ${
                 activeTab === cat
-                  ? 'bg-gradient-to-r from-amber-600 to-orange-600 text-white shadow-lg shadow-orange-500/20'
-                  : 'bg-white/5 hover:bg-white/10 text-zinc-300 border border-white/10'
+                  ? 'bg-gradient-to-r from-amber-600 to-orange-600 text-white shadow-lg shadow-orange-500/20 border-transparent'
+                  : 'bg-black/50 hover:bg-white/10 text-zinc-300 border-white/10'
               }`}
             >
               {cat}
@@ -99,7 +67,7 @@ export default function Projects() {
         </div>
 
         {/* Projects Grid - Clean Transparent Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="max-w-2xl mx-auto w-full grid grid-cols-1 gap-6 lg:gap-8 bg-black/30">
           {filteredProjects.map((project) => (
             <div
               key={project.id}

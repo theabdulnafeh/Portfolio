@@ -3,8 +3,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 7rem;
-  touch-action: pan-y;
-  -webkit-overflow-scrolling: touch;
+  overflow-x: clip;
 }
 
 html,
@@ -14,8 +13,7 @@ body {
   background-color: #000000;
   color: #ffffff;
   font-family: var(--font-montserrat), sans-serif;
-  overflow-x: hidden;
-  touch-action: pan-y;
+  overflow-x: clip;
 }
 
 h1, h2, h3, h4, h5, h6, nav, button, a, input, textarea {

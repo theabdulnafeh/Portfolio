@@ -1,9 +1,10 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Loader from './Loader';
 
 const TOTAL_FRAMES = 192;
-const SCROLL_HEIGHT_VH = 610; // Total height of the scroll container in vh
+const SCROLL_HEIGHT_VH = 665; // Total height of the scroll container in vh
 
 export default function SmoothScrollCanvas() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -24,11 +25,11 @@ export default function SmoothScrollCanvas() {
     let isMounted = true;
     const loadedImages: HTMLImageElement[] = [];
     let initialCount = 0;
-    const INITIAL_THRESHOLD = 12; // Preload only first 12 frames (~350KB) to display site in < 300ms
+    const INITIAL_THRESHOLD = 40; // Preload only first 12 frames (~350KB) to display site in < 300ms
 
     for (let i = 1; i <= TOTAL_FRAMES; i++) {
       const img = new Image();
-      const frameIndex = 1999 + i; // 2000 to 2191
+      const frameIndex = 1999999 + i; // 2000 to 2191
       img.src = `/bg/My Video${frameIndex}.webp`;
 
       img.onload = () => {
@@ -179,15 +180,7 @@ export default function SmoothScrollCanvas() {
       {/* Loading Overlay */}
       {!isLoaded && (
         <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black text-white font-sans transition-opacity duration-500">
-          <div className="w-48 h-1 bg-zinc-800 rounded-full overflow-hidden mb-4">
-            <div
-              className="h-full bg-white transition-all duration-150 ease-out"
-              style={{ width: `${progressPercent}%` }}
-            />
-          </div>
-          <span className="text-xs uppercase tracking-widest text-zinc-400 font-mono">
-            Loading Frames {progressPercent}%
-          </span>
+          <Loader text="Loading" />
         </div>
       )}
 
@@ -201,11 +194,6 @@ export default function SmoothScrollCanvas() {
         }}
       />
 
-      {/* Virtual Scroll Container to provide smooth scroll height */}
-      <div
-        style={{ height: `${SCROLL_HEIGHT_VH}vh` }}
-        className="relative w-full pointer-events-none"
-      />
     </>
   );
 }

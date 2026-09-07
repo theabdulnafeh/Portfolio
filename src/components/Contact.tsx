@@ -107,18 +107,13 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="absolute top-[440vh] sm:top-[410vh] left-1/2 -translate-x-1/2 w-[92%] sm:w-[90%] max-w-6xl z-20 flex flex-col items-center justify-center font-[family-name:var(--font-montserrat)] text-white scroll-mt-28 pb-24"
+      className="relative z-20 py-16 sm:py-24 px-5 sm:px-12 lg:px-16 w-full max-w-6xl mx-auto flex flex-col items-center justify-center font-[family-name:var(--font-montserrat)] text-white scroll-mt-28"
     >
       <div className="w-full relative">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/40 border border-white/10 text-xs sm:text-sm font-semibold tracking-wider text-amber-400 uppercase mb-4 backdrop-blur-sm">
-            <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
-            <span>Start A Conversation</span>
-          </div>
-
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-syne uppercase tracking-tight text-white drop-shadow-lg">
-            Let’s Build Something <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-amber-200">Extraordinary</span>
+            Let’s Work <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-amber-200">Together</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-amber-500 to-orange-600 rounded-full mt-3 shadow-md" />
         </div>
@@ -140,7 +135,7 @@ export default function Contact() {
             <div className="flex flex-col gap-3.5 pt-2">
               {/* WhatsApp Card */}
               <a
-                href="https://wa.me/923155462930"
+                href="https://wa.me/923010500215"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-between p-4 rounded-2xl bg-black/50 border border-white/10 hover:border-emerald-500/50 transition-all duration-300 backdrop-blur-md hover:bg-black/70 shadow-lg"
@@ -153,7 +148,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-zinc-400 uppercase tracking-wider">Direct WhatsApp</h4>
-                    <p className="text-sm font-semibold text-white group-hover:text-emerald-400 transition-colors">+92 315 5462930</p>
+                    <p className="text-sm font-semibold text-white group-hover:text-emerald-400 transition-colors">+92 301 0500215</p>
                   </div>
                 </div>
                 <span className="text-xs font-bold text-zinc-400 group-hover:text-white transition-colors">Chat Now &rarr;</span>
@@ -194,7 +189,7 @@ export default function Contact() {
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="text-amber-400 font-bold">✓</span>
-                  <span><strong>Modern Stack:</strong> Clean Next.js, MERN, and TypeScript codebase</span>
+                  <span><strong>Modern Stack:</strong> Clean, MERN, and TypeScript codebase</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="text-amber-400 font-bold">✓</span>

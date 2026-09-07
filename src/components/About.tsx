@@ -6,18 +6,13 @@ export default function About() {
   return (
     <section
       id="about"
-      className="absolute top-[72vh] sm:top-[105vh] left-1/2 -translate-x-1/2 w-[92%] sm:w-[90%] max-w-6xl z-20 flex flex-col items-center justify-center font-[family-name:var(--font-montserrat)] text-white scroll-mt-28"
+      className="relative z-20 py-16 sm:py-24 px-5 sm:px-12 lg:px-16 w-full max-w-6xl mx-auto flex flex-col items-center justify-center font-[family-name:var(--font-montserrat)] text-white scroll-mt-28"
     >
       {/* Clean Transparent Section (No Glass Container Box) */}
       <div className="w-full relative">
         
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/40 border border-white/10 text-xs sm:text-sm font-semibold tracking-wider text-amber-400 uppercase mb-4 backdrop-blur-sm">
-            <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
-            <span>Get To Know Me</span>
-          </div>
-
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-syne uppercase tracking-tight text-white drop-shadow-lg">
             About <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-amber-200">Me</span>
           </h2>
@@ -34,7 +29,7 @@ export default function About() {
             </h3>
 
             <p className="text-sm sm:text-base text-zinc-200 font-medium leading-relaxed tracking-wide drop-shadow">
-              I’m <strong className="text-white font-bold">Abdul Nafeh</strong>, a passionate MERN Stack & Next.js Engineer specializing in crafting high-speed, interactive, and visually stunning web applications. I bridge the gap between creative UI design and complex backend infrastructure.
+              I’m <strong className="text-white font-bold">Abdul Nafeh</strong>, a passionate MERN Stack Engineer specializing in crafting high-speed, interactive, and visually stunning web applications. I bridge the gap between creative UI design and complex backend infrastructure.
             </p>
 
             <p className="text-sm sm:text-base text-zinc-300 leading-relaxed drop-shadow">
@@ -68,7 +63,7 @@ export default function About() {
                   💻
                 </div>
                 <div>
-                  <h4 className="text-xs sm:text-sm font-bold text-white">MERN & Next.js</h4>
+                  <h4 className="text-xs sm:text-sm font-bold text-white">MERN</h4>
                   <p className="text-xs text-zinc-300">Full-stack web solutions</p>
                 </div>
               </div>
@@ -92,12 +87,6 @@ export default function About() {
               >
                 Let’s Work Together
               </Link>
-              <a
-                href="#contact"
-                className="px-6 py-3 rounded-xl text-xs sm:text-sm font-bold text-zinc-200 bg-black/40 hover:bg-black/60 border border-white/20 hover:border-white/40 transition-all backdrop-blur-sm"
-              >
-                Get In Touch
-              </a>
             </div>
           </div>
 
@@ -107,7 +96,7 @@ export default function About() {
             {/* Stat Card 1 */}
             <div className="p-4 sm:p-6 rounded-2xl bg-black/40 border border-white/10 hover:border-amber-500/50 transition-all duration-300 flex flex-col items-center text-center group/card backdrop-blur-sm hover:bg-black/60 transform hover:-translate-y-1 shadow-lg">
               <span className="text-2xl sm:text-4xl font-extrabold font-syne text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 mb-1">
-                3+
+                1+
               </span>
               <span className="text-xs sm:text-sm font-semibold text-zinc-200">
                 Years Experience
@@ -120,7 +109,7 @@ export default function About() {
             {/* Stat Card 2 */}
             <div className="p-4 sm:p-6 rounded-2xl bg-black/40 border border-white/10 hover:border-amber-500/50 transition-all duration-300 flex flex-col items-center text-center group/card backdrop-blur-sm hover:bg-black/60 transform hover:-translate-y-1 shadow-lg">
               <span className="text-2xl sm:text-4xl font-extrabold font-syne text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 mb-1">
-                25+
+                1
               </span>
               <span className="text-xs sm:text-sm font-semibold text-zinc-200">
                 Projects Completed

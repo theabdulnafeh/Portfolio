@@ -20,59 +20,62 @@ export default function Hero() {
   };
 
   return (
-    <div
+    <section
       id="home"
-      className="absolute top-[12vh] sm:top-[18vh] left-5 sm:left-12 lg:left-16 right-5 sm:right-auto max-w-2xl lg:max-w-3xl z-20 font-[family-name:var(--font-montserrat)] scroll-mt-28"
+      className="relative z-20 pt-28 sm:pt-36 pb-16 sm:pb-24 px-6 sm:px-12 lg:px-16 max-w-4xl min-h-[85vh] flex flex-col justify-center font-[family-name:var(--font-montserrat)] scroll-mt-28"
     >
       <div className="flex flex-col gap-4 sm:gap-7">
         
-        {/* Top Header: HELLO I'M */}
-        <div className="pt-1 sm:pt-3">
-          <span className="font-syne font-extrabold text-xs sm:text-base tracking-widest text-white uppercase drop-shadow-md">
-            HELLO I'M
-          </span>
-        </div>
+        {/* Header & Main Headline */}
+        <div className="flex flex-col gap-1 sm:gap-1.5">
+          {/* Top Header: HELLO I'M */}
+          <div>
+            <span className="font-syne font-extrabold text-xs sm:text-base tracking-widest text-white uppercase drop-shadow-md">
+              HELLO I'M
+            </span>
+          </div>
 
-        {/* Main Headline: Name + Role */}
-        <div className="flex flex-col text-white font-syne uppercase tracking-tight leading-[0.88]">
-          <h1 className="text-4xl sm:text-7xl lg:text-8xl xl:text-[5.5rem] font-extrabold tracking-tight drop-shadow-2xl">
-            ABDUL
-          </h1>
-          
-          <div className="flex flex-wrap items-baseline gap-x-3 sm:gap-x-6 mt-1 sm:mt-2">
-            <span className="text-4xl sm:text-7xl lg:text-8xl xl:text-[5.5rem] font-extrabold tracking-tight drop-shadow-2xl">
-              NAFEH
-            </span>
-            <span className="font-syne font-extrabold text-[11px] sm:text-sm lg:text-base tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-amber-200">
-              MERN DEVELOPER
-            </span>
+          {/* Main Headline: Name + Role */}
+          <div className="flex flex-col text-white font-syne uppercase tracking-tight leading-[0.88]">
+            <h1 className="text-4xl sm:text-7xl lg:text-8xl xl:text-[5.5rem] font-extrabold tracking-tight drop-shadow-2xl">
+              ABDUL
+            </h1>
+            
+            <div className="flex flex-wrap items-baseline gap-x-3 sm:gap-x-6 mt-1 sm:mt-2">
+              <span className="text-4xl sm:text-7xl lg:text-8xl xl:text-[5.5rem] font-extrabold tracking-tight drop-shadow-2xl">
+                NAFEH
+              </span>
+              <span className="font-syne font-extrabold text-[11px] sm:text-sm lg:text-base tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-amber-200">
+                MERN DEVELOPER
+              </span>
+            </div>
           </div>
         </div>
 
         {/* Subtitle / Description */}
         <div className="max-w-xl my-1">
           <p className="font-space text-xs sm:text-sm lg:text-base text-zinc-300 font-medium leading-relaxed tracking-wide drop-shadow-lg">
-            Building Dynamic And Scalable Web Applications With Precision. A Passionate Full-Stack Developer Skilled In MongoDB, Express.js, React, Node.js, And Next.js. I Build Websites That Drive Businesses Forward And Provide Innovative Solutions To Solve Complex Challenges.
+            Building Dynamic And Scalable Web Applications With Precision. A Passionate Full-Stack Developer Skilled In MongoDB, Express.js, React and Node.js. I Build Websites That Drive Businesses Forward And Provide Innovative Solutions To Solve Complex Challenges.
           </p>
         </div>
 
         {/* Action Buttons Group */}
         <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-1">
-          {/* Gradient Amber-Brown Pill Button */}
+          {/* Glowing Orange Pill Button */}
           <a
             href="#contact"
             onClick={handleHireMeClick}
-            className="px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-bold text-white bg-gradient-to-b from-[#241105] via-[#481e05] to-[#783005] hover:from-[#331808] hover:via-[#592607] hover:to-[#913c07] border border-[#a6480d]/50 hover:border-[#ec7322] shadow-[0_4px_15px_rgba(0,0,0,0.5)] hover:shadow-[0_4px_20px_rgba(236,115,34,0.4)] transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 tracking-wide text-center drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)] cursor-pointer"
+            className="px-8 sm:px-9 py-3.5 sm:py-4 rounded-full text-xs sm:text-sm font-bold text-amber-400 hover:text-amber-300 bg-black/10 hover:bg-black/30 border-2 border-amber-500/80 hover:border-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.4),0_10px_20px_-3px_rgba(245,158,11,0.5)] hover:shadow-[0_0_25px_rgba(245,158,11,0.7),0_12px_25px_-2px_rgba(245,158,11,0.7)] transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 tracking-wide text-center cursor-pointer backdrop-blur-md"
           >
             Hire Me Now
           </a>
 
-          {/* Transparent Bordered WhatsApp Button */}
+          {/* Glowing White Pill WhatsApp Button */}
           <a
-            href="https://wa.me/923155462930"
+            href="https://wa.me/923010500215"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-syne font-bold text-white bg-black/40 hover:bg-black/60 border-2 border-white/60 backdrop-blur-md shadow-md transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2.5 tracking-wide"
+            className="px-6 sm:px-7 py-3.5 sm:py-4 rounded-full text-xs sm:text-sm font-syne font-bold text-white bg-black/10 hover:bg-black/30 border-2 border-white/80 hover:border-white shadow-[0_0_15px_rgba(255,255,255,0.3),0_10px_20px_-3px_rgba(255,255,255,0.4)] hover:shadow-[0_0_25px_rgba(255,255,255,0.6),0_12px_25px_-2px_rgba(255,255,255,0.6)] transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2.5 tracking-wide backdrop-blur-md"
           >
             {/* WhatsApp Icon */}
             <svg
@@ -94,7 +97,7 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
-            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border-2 border-white/60 bg-black/40 backdrop-blur-md flex items-center justify-center hover:bg-white transition-all duration-200 shadow-md group"
+            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center hover:bg-white transition-all duration-200 shadow-md group"
           >
             <img
               width="50"
@@ -111,7 +114,7 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border-2 border-white/60 bg-black/40 backdrop-blur-md flex items-center justify-center hover:bg-white transition-all duration-200 shadow-md group"
+            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center hover:bg-white transition-all duration-200 shadow-md group"
           >
             <img
               width="48"
@@ -128,7 +131,7 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border-2 border-white/60 bg-black/40 backdrop-blur-md flex items-center justify-center hover:bg-white transition-all duration-200 shadow-md group"
+            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center hover:bg-white transition-all duration-200 shadow-md group"
           >
             <img
               width="48"
@@ -141,11 +144,11 @@ export default function Hero() {
 
           {/* LinkedIn */}
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/theabdulnafeh/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border-2 border-white/60 bg-black/40 backdrop-blur-md flex items-center justify-center hover:bg-white transition-all duration-200 shadow-md group"
+            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center hover:bg-white transition-all duration-200 shadow-md group"
           >
             <img
               width="50"
@@ -158,6 +161,6 @@ export default function Hero() {
         </div>
 
       </div>
-    </div>
+    </section>
   );
 }
